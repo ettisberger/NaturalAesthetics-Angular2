@@ -1,1 +1,2 @@
-export * from './api.service';
+export * from './component.service';
+export * from './wordpress.service';

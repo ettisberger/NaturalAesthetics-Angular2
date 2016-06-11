@@ -1,30 +1,13 @@
-import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import {Component}  from '@angular/core';
+import {HeaderComponent, PageComponent, FooterComponent} from './components';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
-import { ApiService } from './shared';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-
-import '../style/app.scss';
-
-/*
- * App Component
- * Top Level Component
- */
 @Component({
-  selector: 'my-app', // <my-app></my-app>
-  providers: [ApiService],
-  directives: [...ROUTER_DIRECTIVES],
-  template: require('./app.component.html'),
-  styles: [require('./app.component.scss')],
+    selector: 'my-na-app',
+    template: require('./app.component.html'),
+    directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: '/', component: HomeComponent, name: 'Home'},
-  {path: '/About', component: AboutComponent, name: 'About'}
+    {path: '/page/:id', name: 'Page', component: PageComponent }
 ])
-export class AppComponent {
-  url = 'https://github.com/preboot/angular2-webpack';
-
-  constructor(private api: ApiService) {
-  }
-}
+export class AppComponent { }

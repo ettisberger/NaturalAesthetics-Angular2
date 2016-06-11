@@ -136,25 +136,6 @@ module.exports = function makeWebpackConfig() {
     noParse: [/.+zone\.js\/dist\/.+/, /.+angular2\/bundles\/.+/, /angular2-polyfills\.js/]
   };
 
-  if (isTest) {
-    // instrument only testing sources with Istanbul, covers ts files
-    config.module.postLoaders.push({
-      test: /\.ts$/,
-      include: path.resolve('src'),
-      loader: 'istanbul-instrumenter-loader',
-      exclude: [/\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/]
-    });
-
-    // needed for remap-instanbul
-    config.ts = {
-      compilerOptions: {
-        sourceMap: false,
-        sourceRoot: './src',
-        inlineSourceMap: true
-      }
-    };
-  }
-
   /**
    * Plugins
    * Reference: http://webpack.github.io/docs/configuration.html#plugins
