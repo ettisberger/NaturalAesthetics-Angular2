@@ -6,13 +6,7 @@ import {FilterUtil}         from '../utils/filter.util';
 
 @Component({
     selector: 'products',
-    template: `
-      <ul>
-        <li *ngFor='#product of products'>
-          {{ product.name }}
-        </li>
-      </ul>
-  `,
+    template: require('./products.component.html'),
     providers: [WordpressService, HTTP_PROVIDERS, FilterUtil]
 })
 export class ProductsComponent implements OnInit {

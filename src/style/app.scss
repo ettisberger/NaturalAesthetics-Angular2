@@ -1,8 +1,11 @@
-// styles in src/style directory are applied to the whole page
-body {
-    background: #0147A7;
-    color: #fff;
-}
-a {
-    color: #03A9F4;
-}
+/*
+Theme Name: Natural Aesthetics
+Theme URI: www.naturalaesthetics.ch
+Author: Andy Ettisberger
+Author URI: http://www.ettisberger.ch
+Description: Custom wordpress theme for Natural Aesthetics
+Version: 0.1
+*/
+
+@import "layout/body", "layout/flexbox", "layout/typography";
+@import "components/containers", "components/footer", "components/header", "components/navigation";

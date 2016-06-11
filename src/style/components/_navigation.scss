@@ -1,0 +1,51 @@
+@import "../common/base";
+
+/************************************************************/
+/* VARIABLES */
+/************************************************************/
+
+/************************************************************/
+/* MIXINS */
+/************************************************************/
+
+/************************************************************/
+/* EXTENSIONS */
+/************************************************************/
+
+/************************************************************/
+/* CLASSES */
+/************************************************************/
+.na-main-navigation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: $page-margin;
+
+  .navigation-item {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      a {
+        color: $color-blue;
+      }
+    }
+
+    a {
+      color: $color-white;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    > .navigation-target {
+      padding: 25px 30px;
+    }
+
+    .router-link-active {
+        color: $color-blue;
+    }
+  }
+}

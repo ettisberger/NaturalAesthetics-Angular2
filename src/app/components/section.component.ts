@@ -9,11 +9,7 @@ import {FilterUtil} from '../utils/filter.util';
     host: {
         'class': 'na-section'
     },
-    template: `
-        <div class="na-inlay">
-            <div #childs [innerHTML] = "sectionContent"></div>
-        </div>
-    `,
+    template: require('./section.component.html'),
     providers: [FilterUtil]
 })
 export class SectionComponent implements OnInit {

@@ -1,0 +1,97 @@
+@import "../common/base";
+
+/************************************************************/
+/* VARIABLES */
+/************************************************************/
+$widths: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$positions: 1, 2, 3, 4, 5;
+
+
+/************************************************************/
+/* MIXINS */
+/************************************************************/
+
+@mixin na-column($suffix:"") {
+  @each $width in $widths {
+    .na-column#{$suffix + '-' + $width} {
+      flex: #{($width/length($widths)) * 100 +'%'};
+      max-width: #{($width/length($widths)) * 100 +'%'};
+    }
+  }
+}
+
+@mixin na-order($suffix:"") {
+  @each $position in $positions {
+    .na-order#{$suffix + '-' + $position} {
+      order: #{$position};
+    }
+  }
+}
+
+@mixin na-hide($suffix:"") {
+  .na-hide#{$suffix} {
+    display: none !important;
+  }
+}
+
+
+/************************************************************/
+/* CLASSES */
+/************************************************************/
+
+//@include na-flexbox {
+  .na-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+
+    margin-left: -15px;
+    margin-right: -15px;
+
+    *[class^="na-column-"] {
+      padding: 5px 15px;
+      display: flex;
+    }
+
+    &.na-row-large-vspace {
+      *[class^="na-column-"] {
+        padding: 25px 15px;
+      }
+    }
+
+    &.na-row-centered {
+      align-items: center;
+    }
+
+    &.na-row-no-space {
+      *[class^="na-column-"] {
+        padding: 0px;
+      }
+
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  //}
+
+  @include na-column;
+  @include na-order;
+  @include na-hide;
+
+  @include na-phone {
+    @include na-column('-phone');
+    @include na-order('-phone');
+    @include na-hide('-phone');
+  }
+
+  @include na-tablet {
+    @include na-column('-tablet');
+    @include na-order('-tablet');
+    @include na-hide('-tablet');
+  }
+
+  @include na-desktop {
+    @include na-column('-desktop');
+    @include na-order('-desktop');
+    @include na-hide('-desktop');
+  }
+}

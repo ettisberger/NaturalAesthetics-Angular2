@@ -26,30 +26,30 @@ export class ComponentService {
         return enrichedSections;
     }
 
-    // private getChildren(section: string): Map<string, string> {
-    //
-    //     let map = new Map<string, string>();
-    //
-    //     if (section.search(SectionCode.PRODUCT.regex) > 0) {
-    //         map = this.splitBySectionCode(section, SectionCode.PRODUCT);
-    //     } else if (section.search(SectionCode.LINK.regex) > 0) {
-    //         map = this.splitBySectionCode(section, SectionCode.LINK);
-    //     } else {
-    //         map.set(SectionCode.TEXT.code, section);
-    //     }
-    //
-    //     return map;
-    // }
+    getChildren(section: string): Map<string, string> {
 
-    // private splitBySectionCode(section: string, code: any): Map<string, string> {
-    //     let map = new Map<string, string>();
-    //
-    //     let sections = section.split(code.regex);
-    //
-    //     map.set(SectionCode.TEXT.code, sections[0]);
-    //     map.set(code.code, sections[1]);
-    //     map.set(SectionCode.TEXT.code, sections[2]);
-    //
-    //     return map;
-    // };
+      let map = new Map<string, string>();
+
+      if (section.search(SectionCode.PRODUCT.regex) > 0) {
+          map = this.splitBySectionCode(section, SectionCode.PRODUCT);
+      } else if (section.search(SectionCode.LINK.regex) > 0) {
+          map = this.splitBySectionCode(section, SectionCode.LINK);
+      } else {
+          map.set(SectionCode.TEXT.code, section);
+      }
+
+      return map;
+    }
+
+    splitBySectionCode(section: string, code: any): Map<string, string> {
+      let map = new Map<string, string>();
+
+      let sections = section.split(code.regex);
+
+      map.set(SectionCode.TEXT.code, sections[0]);
+      map.set(code.code, sections[1]);
+      map.set(SectionCode.TEXT.code, sections[2]);
+
+      return map;
+    };
 }

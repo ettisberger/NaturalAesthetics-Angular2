@@ -1,0 +1,14 @@
+@import "../common/base";
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+}

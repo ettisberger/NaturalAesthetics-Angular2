@@ -1,0 +1,48 @@
+@import "../common/base";
+
+/************************************************************/
+/* VARIABLES */
+/************************************************************/
+
+/************************************************************/
+/* MIXINS */
+/************************************************************/
+
+/************************************************************/
+/* EXTENSIONS */
+/************************************************************/
+
+/************************************************************/
+/* CLASSES */
+/************************************************************/
+.na-main-footer {
+  background-color: $color-blue-grey;
+  color: $color-white;
+  padding: 5rem 0;
+  border-top: 1rem solid $color-black;
+
+  .na-footer-box {
+    flex: 1;
+    display: block;
+
+    .na-footer-box-title {
+      @extend %na-heading-5;
+      color: $color-white;
+    }
+
+    .na-footer-box-content {
+      margin-top: 1.0rem;
+      height: 7.0 * $line-height-body;
+    }
+  }
+
+  a {
+    color: $color-white;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

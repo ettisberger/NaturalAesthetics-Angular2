@@ -3,7 +3,7 @@ import {HeaderComponent, PageComponent, FooterComponent} from './components';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
-    selector: 'my-na-app',
+    selector: 'na-app',
     template: require('./app.component.html'),
     directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
 })

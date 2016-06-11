@@ -1,0 +1,5 @@
+<ul>
+  <li class="navigation-item" *ngFor="let menuItem of menuItems">
+    <a [routerLink]="['/Page', {id: menuItem.title | lowercase}]">{{ menuItem?.title }}</a>
+  </li>
+</ul>

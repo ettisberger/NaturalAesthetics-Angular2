@@ -9,10 +9,7 @@ import {SectionComponent}    from './section.component';
 
 @Component({
     selector: 'page',
-    template: `
-        <pageheader #sections [page] = "page" ></pageheader>
-
-    `,
+    template: require('./page.component.html'),
     providers: [WordpressService, ComponentService, HTTP_PROVIDERS],
     directives: [PageHeaderComponent, SectionComponent]
 })

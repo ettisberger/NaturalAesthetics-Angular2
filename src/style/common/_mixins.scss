@@ -1,0 +1,28 @@
+/************************************************************/
+/* VARIABLES */
+/************************************************************/
+$tablet-min-width: 768px;
+$desktop-min-width: 1000px;
+
+/************************************************************/
+/* MIXINS */
+/************************************************************/
+
+@mixin na-phone {
+  @media (max-width: #{$tablet-min-width - 1px}) {
+    @content;
+  }
+}
+
+
+@mixin na-tablet {
+  @media (min-width: #{$tablet-min-width}) and (max-width: #{$desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin na-desktop {
+  @media (min-width: #{$desktop-min-width}) {
+    @content;
+  }
+}

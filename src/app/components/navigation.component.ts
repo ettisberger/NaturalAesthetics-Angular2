@@ -6,13 +6,7 @@ import {MenuItem}                  from './../models/menuitem.model';
 
 @Component({
     selector: 'navigation',
-    template: `
-  <ul>
-    <li class="navigation-item" *ngFor="let menuItem of menuItems">
-      <a [routerLink]="['/Page', {id: menuItem.title | lowercase}]">{{ menuItem?.title }}</a>
-    </li>
-  </ul>
-  `,
+    template: require('./navigation.component.html'),
     directives: [ROUTER_DIRECTIVES],
     providers: [WordpressService, HTTP_PROVIDERS]
 })
