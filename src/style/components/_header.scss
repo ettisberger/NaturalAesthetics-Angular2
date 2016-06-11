@@ -33,11 +33,12 @@ $page-margin: 35px;
 .na-page-header {
   background-color: $color-blue-grey;
   border-bottom: 1rem solid;
+  height: 60%;
 
   .na-page-image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 60%;
+    height: 100%;
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, DynamicComponentLoader, ElementRef}   from '@angular/core';
+import {Component, Input, OnInit, ElementRef}   from '@angular/core';
 import {Section} from '../models/section.model';
 import {SectionCode} from '../models/section.model';
 import {LinkComponent} from './link.component';
@@ -16,7 +16,7 @@ export class SectionComponent implements OnInit {
     @Input() section: Section;
     sectionContent: string;
 
-    constructor (private dcl: DynamicComponentLoader, private elementRef: ElementRef, private filter: FilterUtil) {
+    constructor (private elementRef: ElementRef, private filter: FilterUtil) {
 
     }
 
@@ -29,7 +29,7 @@ export class SectionComponent implements OnInit {
                 //     compRef.instance.ids = this.filter.parseIds(value);
                 // });
             } else if (key === SectionCode.LINK.code) {
-                this.dcl.loadIntoLocation(LinkComponent, this.elementRef, 'childs');
+                // this.dcl.loadIntoLocation(LinkComponent, this.elementRef, 'childs');
             }
         }, this);
     }
