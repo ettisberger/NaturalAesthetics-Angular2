@@ -9,6 +9,7 @@ import '@angular/router-deprecated';
 // RxJS
 import 'rxjs';
 
-// Other vendors for example jQuery, Lodash or Bootstrap
-// You can import js, ts, css, sass, ...
+// scss
 require('./style/app.scss');
+
+// import external css

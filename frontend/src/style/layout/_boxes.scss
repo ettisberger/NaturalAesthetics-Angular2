@@ -1,0 +1,38 @@
+.na-product-boxes {
+  justify-content: center;
+
+    .na-product-box {
+      border: 1px solid $color-black;
+      margin: 1rem;
+      padding: 1rem;
+      background-color: $color-blue-grey;
+      flex-direction: column;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &-icon {
+        padding: 0 0 2rem 0;
+        font-size: 8rem;
+        text-align: center;
+      }
+
+      &-title {
+        @extend %na-heading-5;
+        color: $color-black;
+        background-color: $color-white;
+        margin: 0;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      &-details {
+        background-color: $color-white;
+        color: $color-black;
+        padding: 0 0 1rem 0;
+        text-align: center;
+      }
+    }
+}
+

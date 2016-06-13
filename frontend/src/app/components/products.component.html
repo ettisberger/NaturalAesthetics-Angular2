@@ -1,5 +1,14 @@
-<ul>
-  <li *ngFor='let product of products'>
-    {{ product.name }}
-  </li>
-</ul>
+<div class="na-product-boxes na-row na-row-hcenter">
+  <div class="na-product-box na-column-4" *ngFor='let product of products'>
+    <div class="na-product-box-icon">
+      <i class="fa fa-shield"></i>
+    </div>
+    <div class="na-product-box-title">
+      {{ product.name }}
+    </div>
+    <div class="na-product-box-details">
+      Grössen: M, L, XL <br>
+      Preis: 50.00 Fr
+    </div>
+  </div>
+</div>

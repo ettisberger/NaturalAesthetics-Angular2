@@ -40,37 +40,32 @@ $positions: 1, 2, 3, 4, 5;
 /************************************************************/
 
 //@include na-flexbox {
-  .na-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    display: flex;
+.na-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
 
-    margin-left: -15px;
-    margin-right: -15px;
+  &.na-row-vcenter {
+    align-items: center;
+  }
 
+  &.na-row-hcenter {
+    justify-content: center;
+  }
+
+  &.na-row-small-padding {
+    margin: -0.5rem -1rem;
     *[class^="na-column-"] {
-      padding: 5px 15px;
-      display: flex;
+      padding: 0.5rem 1rem;
     }
+  }
 
-    &.na-row-large-vspace {
-      *[class^="na-column-"] {
-        padding: 25px 15px;
-      }
+  &.na-row-padding {
+    margin: -1rem;
+    *[class^="na-column-"] {
+      padding: 1rem;
     }
-
-    &.na-row-centered {
-      align-items: center;
-    }
-
-    &.na-row-no-space {
-      *[class^="na-column-"] {
-        padding: 0px;
-      }
-
-      margin-left: 0px;
-      margin-right: 0px;
-    }
+  }
   //}
 
   @include na-column;
