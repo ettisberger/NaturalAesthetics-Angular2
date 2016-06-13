@@ -1,6 +1,7 @@
 import {Injectable}     from '@angular/core';
 import {Section}        from './../models/section.model';
 import {SectionCode}    from '../models/section.model';
+import {SectionItem} from '../models/sectionitem.model';
 
 @Injectable()
 export class ComponentService {
@@ -26,30 +27,30 @@ export class ComponentService {
         return enrichedSections;
     }
 
-    getChildren(section: string): Map<string, string> {
+    getChildren(section: string): any {
 
-      let map = new Map<string, string>();
+      let list = [];
 
       if (section.search(SectionCode.PRODUCT.regex) > 0) {
-          map = this.splitBySectionCode(section, SectionCode.PRODUCT);
+        list = this.splitBySectionCode(section, SectionCode.PRODUCT);
       } else if (section.search(SectionCode.LINK.regex) > 0) {
-          map = this.splitBySectionCode(section, SectionCode.LINK);
+        list = this.splitBySectionCode(section, SectionCode.LINK);
       } else {
-          map.set(SectionCode.TEXT.code, section);
+        list.push(new SectionItem(SectionCode.TEXT.code, section));
       }
 
-      return map;
+      return list;
     }
 
-    splitBySectionCode(section: string, code: any): Map<string, string> {
-      let map = new Map<string, string>();
+    splitBySectionCode(section: string, code: any): any {
+      let list = [];
 
       let sections = section.split(code.regex);
 
-      map.set(SectionCode.TEXT.code, sections[0]);
-      map.set(code.code, sections[1]);
-      map.set(SectionCode.TEXT.code, sections[2]);
+      list.push(new SectionItem(SectionCode.TEXT.code, sections[0]));
+      list.push(new SectionItem(code.code, sections[1]));
+      list.push(new SectionItem(SectionCode.TEXT.code, sections[2]));
 
-      return map;
+      return list;
     };
 }

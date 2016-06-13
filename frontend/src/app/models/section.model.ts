@@ -1,15 +1,15 @@
 export class Section {
-    private sectionMap: Map<string, string>;
+    private sections: any;
 
     constructor() {
     }
 
-    getChildren(): Map<string, string> {
-        return this.sectionMap;
+    getChildren(): any {
+        return this.sections;
     }
 
-    setChildren(map: Map<string, string>) {
-        this.sectionMap = map;
+    setChildren(sections: any) {
+        this.sections = sections;
     }
 }
 
