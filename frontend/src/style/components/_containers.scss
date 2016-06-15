@@ -17,6 +17,10 @@
 }
 
 .na-odd {
+  h2, h3, h4, h5 {
+    color: $color-white;
+  }
+
   color: $color-white;
-  background-color: $color-blue-grey;
+  background-color: $color-black;
 }

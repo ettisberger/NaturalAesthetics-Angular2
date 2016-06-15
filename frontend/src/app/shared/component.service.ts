@@ -33,6 +33,8 @@ export class ComponentService {
 
       if (section.search(SectionCode.PRODUCT.regex) > 0) {
         list = this.splitBySectionCode(section, SectionCode.PRODUCT);
+      } else if (section.search(SectionCode.TEAM.regex) > 0) {
+        list = this.splitBySectionCode(section, SectionCode.TEAM);
       } else if (section.search(SectionCode.LINK.regex) > 0) {
         list = this.splitBySectionCode(section, SectionCode.LINK);
       } else {

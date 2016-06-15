@@ -7,6 +7,7 @@ import {ProductsComponent} from './products.component';
 import {ComponentService} from '../shared/component.service';
 import {SectionItem} from '../models/sectionitem.model';
 import {TextComponent} from './text.component';
+import {TeamComponent} from './team.component';
 
 @Component({
     selector: 'section',
@@ -28,7 +29,6 @@ export class SectionComponent implements OnInit {
     ngOnInit() {
         this.section.getChildren().forEach(function(sectionItem: SectionItem) {
             if (sectionItem.code === SectionCode.TEXT.code) {
-                // this.sectionContent = sectionItem.content;
               this.compiler.resolveComponent(TextComponent).then((factory) => {
                 let compRef = this.target.createComponent(factory);
                 compRef.instance.content = sectionItem.content;
@@ -37,6 +37,11 @@ export class SectionComponent implements OnInit {
               this.compiler.resolveComponent(ProductsComponent).then((factory) => {
                 let compRef = this.target.createComponent(factory);
                     compRef.instance.ids = this.filter.parseIds(sectionItem.content);
+              });
+            } else if (sectionItem.code === SectionCode.TEAM.code) {
+              this.compiler.resolveComponent(TeamComponent).then((factory) => {
+                let compRef = this.target.createComponent(factory);
+                compRef.instance.ids = this.filter.parseIds(sectionItem.content);
               });
             } else if (sectionItem.code === SectionCode.LINK.code) {
               this.compiler.resolveComponent(LinkComponent).then((factory) => {

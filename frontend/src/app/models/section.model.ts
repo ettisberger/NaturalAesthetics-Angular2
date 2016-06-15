@@ -18,4 +18,5 @@ export class SectionCode {
     public static TEXT = {code: '[text]', regex: new RegExp('(\\[text.*\\])')};
     public static PRODUCT = {code: '[produkte]', regex: new RegExp('(\\[produkte.*\\])')};
     public static LINK = {code: '[links]', regex: new RegExp('(\\[links.*\\])')};
+    public static TEAM = {code: '[team]', regex: new RegExp('(\\[team.*\\])')};
 }

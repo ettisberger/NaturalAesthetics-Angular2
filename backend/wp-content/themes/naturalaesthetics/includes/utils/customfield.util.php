@@ -27,6 +27,14 @@ class CustomFieldUtils {
         ));
 
         acf_add_options_sub_page(array(
+            'page_title' 	=> 'Team',
+            'menu_title'	=> 'Team',
+            'menu_slug' 	=> 'naturalaesthetics-team',
+            'capability'	=> 'edit_posts',
+            'parent_slug'	=> 'naturalaesthetics-general-settings'
+        ));
+
+        acf_add_options_sub_page(array(
             'page_title' 	=> 'Links',
             'menu_title'	=> 'Links',
             'menu_slug' 	=> 'naturalaesthetics-links',

@@ -47,11 +47,11 @@ export class PageComponent implements OnInit {
     }
 
     private loadSectionTemplates(sections) {
-        sections.reverse().forEach(function (section: Section, counter: number) {
+        sections.forEach(function (section: Section, counter: number) {
           let sectionClass: string = (counter % 2 === 0) ? 'na-even' : 'na-odd';
 
           this.compiler.resolveComponent(SectionComponent).then((factory) => {
-            let compRef = this.target.createComponent(factory, null, this.target.injector);
+            let compRef = this.target.createComponent(factory);
             compRef.instance.section = section;
             compRef.location.nativeElement.className = compRef.location.nativeElement.className + ' ' + sectionClass;
           });

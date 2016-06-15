@@ -6,6 +6,7 @@ import {MenuItem}       from './../models/menuitem.model';
 import {Footer}         from './../models/footer.model';
 import {Observable}     from 'rxjs/Observable';
 import {Link}           from '../models/link.model';
+import {TeamMember}     from '../models/teammember.model';
 
 @Injectable()
 export class WordpressService {
@@ -27,6 +28,11 @@ export class WordpressService {
     getProducts() {
         return this.http.get(this.baseUrl + this.acfUrl + '/options/products')
             .map(res => <Array<Product>> res.json().products)
+            .catch(this.handleError);
+    }
+    getTeam() {
+        return this.http.get(this.baseUrl + this.acfUrl + '/options/team')
+            .map(res => <Array<TeamMember>> res.json().team)
             .catch(this.handleError);
     }
 

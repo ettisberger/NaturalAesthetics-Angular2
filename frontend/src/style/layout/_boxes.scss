@@ -5,7 +5,8 @@
       border: 1px solid $color-black;
       margin: 1rem;
       padding: 1rem;
-      background-color: $color-blue-grey;
+      background-color: $color-black;
+      color: $color-white;
       flex-direction: column;
 
       &:hover {
@@ -35,8 +36,36 @@
       }
     }
 }
+.na-team-boxes {
+
+  .na-team-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &-text {
+    }
+
+    &-title {
+
+    }
+
+    &-description {
+
+    }
+
+    &-image {
+      width: 50%;
+      height: 50%;
+      margin: 1em auto;
+      border: 5px solid #EEE;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+ }
 
 .na-text-box {
+
   h2 {
     text-align: center;
   }
