@@ -28,14 +28,14 @@ export class SectionComponent implements OnInit {
     ngOnInit() {
         this.section.getChildren().forEach(function(sectionItem: SectionItem) {
             if (sectionItem.code === SectionCode.TEXT.code) {
-                this.sectionContent = sectionItem.content;
-              // this.compiler.resolveComponent(TextComponent).then((factory) => {
-              //   let compRef = this.target.createComponent(factory, null, this.target.injector);
-              //   compRef.instance.content = sectionItem.content;
-              // });
+                // this.sectionContent = sectionItem.content;
+              this.compiler.resolveComponent(TextComponent).then((factory) => {
+                let compRef = this.target.createComponent(factory);
+                compRef.instance.content = sectionItem.content;
+              });
             } else if (sectionItem.code === SectionCode.PRODUCT.code) {
               this.compiler.resolveComponent(ProductsComponent).then((factory) => {
-                let compRef = this.target.createComponent(factory, 0, this.target.injector);
+                let compRef = this.target.createComponent(factory);
                     compRef.instance.ids = this.filter.parseIds(sectionItem.content);
               });
             } else if (sectionItem.code === SectionCode.LINK.code) {
