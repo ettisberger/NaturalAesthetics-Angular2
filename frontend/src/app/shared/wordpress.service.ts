@@ -11,6 +11,7 @@ import {TeamMember}     from '../models/teammember.model';
 @Injectable()
 export class WordpressService {
 
+  // TODO prod url in webpack build
     private baseUrl = 'http://localhost:8090/wp-json';
     private menuUrl = '/wp-api-menus/v2/menu-locations';
     private acfUrl = '/acf/v2';

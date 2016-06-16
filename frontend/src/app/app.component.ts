@@ -8,6 +8,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    {path: '/page/:id', name: 'Page', component: PageComponent }
+  // { path: '/page/startseite', name: 'Page', component: PageComponent, useAsDefault: true },
+  { path: '/page/:id', name: 'Page', component: PageComponent }
 ])
 export class AppComponent { }

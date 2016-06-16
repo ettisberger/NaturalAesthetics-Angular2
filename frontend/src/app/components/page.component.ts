@@ -30,7 +30,7 @@ export class PageComponent implements OnInit {
     ngOnInit() {
         let id = this.routerParams.get('id');
 
-        this.getPage(id);
+        // this.getPage(id);
     }
 
     getPage(id: string) {
