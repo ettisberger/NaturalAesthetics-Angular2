@@ -1,9 +1,9 @@
 <div class="na-team-boxes na-row na-row-hcenter">
   <div class="na-team-box na-column-12" *ngFor='let teamMember of team'>
-    <div class="na-team-box-text na-column-6">
+    <div class="na-team-box-text na-column-6 na-column-tablet-6 na-column-phone-12">
       <div class="na-team-box-title"><h3>{{ teamMember.name }}</h3></div>
       <div class="na-team-box-description" [innerHTML]="teamMember.description"></div>
     </div>
-    <img class="na-team-box-image na-column-6" src="{{ teamMember.image }}" />
+    <img class="na-team-box-image na-column-6 na-column-tablet-6 na-column-phone-12" src="{{ teamMember.image }}" />
   </div>
 </div>

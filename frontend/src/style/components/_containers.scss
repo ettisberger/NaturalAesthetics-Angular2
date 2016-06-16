@@ -1,10 +1,19 @@
 @import "../common/base";
 
 .na-inlay {
-  width: 100%;
-  max-width: 970px;
   margin: 0 auto;
-  position: relative;
+
+  @include na-desktop {
+    width: 1200px;
+  }
+
+  @include na-tablet {
+    padding: 0 20px;
+  }
+
+  @include na-phone {
+    padding: 0 20px;
+  }
 }
 
 .na-section {

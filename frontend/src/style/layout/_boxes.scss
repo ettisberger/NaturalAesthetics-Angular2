@@ -55,10 +55,15 @@
     }
 
     &-image {
+
+      @include na-phone {
+        width: 100%;
+      }
+
       width: 50%;
       height: 50%;
       margin: 1em auto;
-      border: 5px solid #EEE;
+      border: 1px solid $color-white;
       box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
     }
   }
