@@ -1,5 +1,4 @@
 import {Component, OnInit}   from '@angular/core';
-import {RouteParams} from '@angular/router-deprecated';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {WordpressService, ComponentService} from '../shared';
 import {PageHeaderComponent} from './pageheader.component';
@@ -8,6 +7,8 @@ import {Link}                from '../models/link.model';
 import {SectionComponent}    from './section.component';
 import {Section}            from '../models/section.model';
 import {ViewContainerRef, ComponentResolver, ViewChild} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+
 @Component({
     selector: 'page',
     template: require('./page.component.html'),
@@ -22,15 +23,17 @@ export class PageComponent implements OnInit {
     @ViewChild('target', {read: ViewContainerRef}) target;
 
 
-  constructor (private routerParams: RouteParams, private wordpressService: WordpressService,
+  constructor (private router: Router, private route: ActivatedRoute, private wordpressService: WordpressService,
         private componentService: ComponentService, private compiler: ComponentResolver
     ) {
     }
 
     ngOnInit() {
-        let id = this.routerParams.get('id');
+        let id = this.route.snapshot.params['id'];
 
-        this.getPage(id);
+        if (id) {
+          this.getPage(id);
+        }
     }
 
     getPage(id: string) {

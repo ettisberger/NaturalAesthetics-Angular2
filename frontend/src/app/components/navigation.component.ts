@@ -1,6 +1,6 @@
 import {Component, OnInit}         from '@angular/core';
 import {HTTP_PROVIDERS}            from '@angular/http';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {WordpressService}          from '../shared';
 import {MenuItem}                  from './../models/menuitem.model';
 
@@ -26,7 +26,7 @@ export class NavigationComponent implements OnInit {
                 menuItems => {
                     this.menuItems = menuItems;
 
-                    this.router.navigate(['Page', { id: this.menuItems[0].title.toLowerCase() }]);
+                    this.router.navigate(['/page', this.menuItems[0].title.toLowerCase()]);
                 },
                 error =>  this.errorMessage = <any>error);
     }

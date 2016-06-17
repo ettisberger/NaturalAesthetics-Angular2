@@ -6,7 +6,7 @@
         <div class="na-footer-box-content">
           <ul>
             <li *ngFor="let page of footer?.columnLeft?.pages">
-              <a [routerLink]="['/Page', {id: page?.title | lowercase}]">{{ page?.title }}</a>
+              <a [routerLink]="['/page/' + page?.title | lowercase]">{{ page?.title }}</a>
             </li>
           </ul>
         </div>
