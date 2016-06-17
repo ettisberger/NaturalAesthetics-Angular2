@@ -12,7 +12,7 @@ import {TeamMember}     from '../models/teammember.model';
 export class WordpressService {
 
   // TODO prod url in webpack build
-    private baseUrl = 'http://localhost:8090/wp-json';
+    private baseUrl = 'http://www.naturalaesthetics.ch/wp-json';
     private menuUrl = '/wp-api-menus/v2/menu-locations';
     private acfUrl = '/acf/v2';
     private wpUrl = '/wp/v2';
