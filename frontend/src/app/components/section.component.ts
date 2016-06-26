@@ -4,7 +4,6 @@ import {SectionCode} from '../models/section.model';
 import {FilterUtil} from '../utils/filter.util';
 import {LinkComponent} from './link.component';
 import {ProductsComponent} from './products.component';
-import {ComponentService} from '../shared/component.service';
 import {SectionItem} from '../models/sectionitem.model';
 import {TextComponent} from './text.component';
 import {TeamComponent} from './team.component';
@@ -21,7 +20,7 @@ export class SectionComponent implements OnInit {
   @HostBinding('class.na-even') get even() { return this.section.isEven(); }
   @HostBinding('class.na-odd') get odd() { return !this.section.isEven(); }
 
-  constructor (private componentService: ComponentService, private compiler: ComponentResolver, private filter: FilterUtil) {
+  constructor (private compiler: ComponentResolver, private filter: FilterUtil) {
   }
 
   ngOnInit() {
