@@ -1,16 +1,25 @@
 export class Section {
-    private sections: any;
+  private sections: any;
+  private even: boolean;
 
-    constructor() {
-    }
+  constructor() {
+  }
 
-    getChildren(): any {
-        return this.sections;
-    }
+  setIsEven(value: boolean) {
+    this.even = value;
+  }
 
-    setChildren(sections: any) {
-        this.sections = sections;
-    }
+  isEven(): boolean {
+    return this.even;
+  }
+
+  getChildren(): any {
+      return this.sections;
+  }
+
+  setChildren(sections: any) {
+      this.sections = sections;
+  }
 }
 
 export class SectionCode {

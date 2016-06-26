@@ -28,36 +28,34 @@ export class PageComponent implements OnInit {
     ) {
     }
 
-    ngOnInit() {
-        let id = this.route.snapshot.params['id'];
+  ngOnInit() {
+      let id = this.route.snapshot.params['id'];
 
-        if (id) {
-          this.getPage(id);
-        }
-    }
+      if (id) {
+        this.getPage(id);
+      }
+  }
 
-    getPage(id: string) {
-        this.wordpressService.getPage(id)
-            .subscribe(
-                page => {
-                    this.page = page;
+  getPage(id: string) {
+      this.wordpressService.getPage(id)
+          .subscribe(
+              page => {
+                  this.page = page;
 
-                    let sections = this.componentService.getSections(page.content);
+                  let sections = this.componentService.getSections(page.content);
 
-                    this.loadSectionTemplates(sections);
-                },
-                error =>  this.errorMessage = <any>error);
-    }
+                  this.loadSectionTemplates(sections);
+              },
+              error =>  this.errorMessage = <any>error);
+  }
 
-    private loadSectionTemplates(sections) {
-        sections.forEach(function (section: Section, counter: number) {
-          let sectionClass: string = (counter % 2 === 0) ? 'na-even' : 'na-odd';
-
-          this.compiler.resolveComponent(SectionComponent).then((factory) => {
-            let compRef = this.target.createComponent(factory);
-            compRef.instance.section = section;
-            compRef.location.nativeElement.className = compRef.location.nativeElement.className + ' ' + sectionClass;
-          });
-        }, this);
-    };
+  private loadSectionTemplates(sections) {
+      sections.forEach(function (section: Section, counter: number) {
+        this.compiler.resolveComponent(SectionComponent).then((factory) => {
+          let compRef = this.target.createComponent(factory);
+          compRef.instance.section = section;
+          section.setIsEven(counter % 2 === 0);
+        });
+      }, this);
+  };
 }
