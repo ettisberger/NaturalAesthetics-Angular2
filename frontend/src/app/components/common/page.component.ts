@@ -1,13 +1,10 @@
-import {Component, OnInit}   from '@angular/core';
+import {Component, OnInit, ViewContainerRef, ComponentResolver, ViewChild}   from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
-import {WordpressService, ComponentService} from '../../shared';
-import {PageHeaderComponent} from './pageheader.component';
-import {Page}                from '../../models/page.model';
-import {Link}                from '../../models/link.model';
-import {SectionComponent}    from './../section.component';
-import {Section}            from '../../models/section.model';
-import {ViewContainerRef, ComponentResolver, ViewChild} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
+import {WordpressService, ComponentService} from '../../shared';
+import {Page, Link, Section} from '../../models';
+import {PageHeaderComponent} from './pageheader.component';
+import {SectionComponent}    from './../section.component';
 
 @Component({
     selector: 'page',

@@ -1,8 +1,8 @@
 import {Component, OnInit}  from '@angular/core';
 import {HTTP_PROVIDERS}     from '@angular/http';
-import {Product}            from './../models/product.model';
+import {Product}            from './../models';
 import {WordpressService}   from '../shared';
-import {FilterUtil}         from '../utils/filter.util';
+import {FilterUtil}         from '../utils';
 
 @Component({
     selector: 'products',

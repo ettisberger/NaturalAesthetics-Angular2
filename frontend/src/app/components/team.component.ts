@@ -1,8 +1,8 @@
 import {Component, OnInit}  from '@angular/core';
 import {HTTP_PROVIDERS}     from '@angular/http';
 import {WordpressService}   from '../shared';
-import {FilterUtil}         from '../utils/filter.util';
-import {TeamMember} from  '../models/teammember.model';
+import {FilterUtil}         from '../utils';
+import {TeamMember}         from '../models';
 
 @Component({
     selector: 'team',

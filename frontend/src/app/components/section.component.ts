@@ -1,10 +1,8 @@
 import {Component, Input, OnInit, ComponentResolver, ViewContainerRef, ViewChild, HostBinding}   from '@angular/core';
-import {Section} from '../models/section.model';
-import {SectionCode} from '../models/section.model';
-import {FilterUtil} from '../utils/filter.util';
+import {Section, SectionCode, SectionItem} from '../models';
+import {FilterUtil} from '../utils';
 import {LinkComponent} from './link.component';
 import {ProductsComponent} from './products.component';
-import {SectionItem} from '../models/sectionitem.model';
 import {TextComponent} from './text.component';
 import {TeamComponent} from './team.component';
 
