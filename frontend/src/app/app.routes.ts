@@ -1,5 +1,5 @@
 import {provideRouter, RouterConfig} from '@angular/router';
-import {PageComponent} from './components/page.component';
+import {PageComponent} from './components/common/page.component';
 
 export const routes: RouterConfig = [
   { path: '/page/:id', component: PageComponent },

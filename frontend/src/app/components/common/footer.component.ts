@@ -1,9 +1,9 @@
 import {Component, OnInit}          from '@angular/core';
 import {HTTP_PROVIDERS}             from '@angular/http';
 import {ROUTER_DIRECTIVES}          from '@angular/router';
-import {WordpressService}           from '../shared';
-import {Footer}                     from './../models/footer.model';
-import {MenuItem}                   from './../models/menuitem.model';
+import {WordpressService}           from '../../shared';
+import {Footer}                     from '../../models/footer.model';
+import {MenuItem}                   from '../../models/menuitem.model';
 
 @Component({
     selector: 'footer',

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Page} from './../models/page.model';
+import {Page} from '../../models/page.model';
 
 @Component({
     selector: 'na-pageheader',
